@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clock</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+        @font-face {
+            font-family: Al-kanz;
+            src: url(/Javascript/Projects/Clock/kanz-al-marjaan-webfont.woff);
+        }
+    </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="watch-container" id="main">
+                <div class="number-container">
+                    <div style="transform:translateY(-50%) rotate(90deg);"><span
+                            style="transform: rotate(-90deg);">12</span><span
+                            style="transform: rotate(-90deg);">6</span>
+                    </div>
+                    <div style="transform:translateY(-50%) rotate(-60deg);"><span
+                            style="transform: rotate(60deg);">7</span><span
+                            style="transform: rotate(60deg);"></span></div>
+                    <div style="transform:translateY(-50%) rotate(-30deg);"><span
+                            style="transform: rotate(30deg);">8</span><span
+                            style="transform: rotate(30deg);">2</span></div>
+                    <div><span>9</span><span>3</span></div>
+                    <div style="transform:translateY(-50%) rotate(30deg);"><span
+                            style="transform: rotate(-30deg);">10</span><span
+                            style="transform: rotate(-30deg);">4</span>
+                    </div>
+                    <div style="transform:translateY(-50%) rotate(60deg);"><span
+                            style="transform: rotate(-60deg);">11</span><span
+                            style="transform: rotate(-60deg);">5</span>
+                    </div>
+                </div>
+                <div class="anchor"></div>
+                <div class="seconds-hand"></div>
+                <div class="minutes-hand"></div>
+                <div class="hours-hand"></div>
+            </div>
+            <select name="theme" id="theme" class="theme"
+                onclick="changeTheme(this.value)" style="z-index: 6;">
+                <option value="0">Nature-Inspired Cream and Green</option>
+                <option value="1">Classic Blue
+                    White</option>
+                <option value="2">Monochrome Grey</option>
+                <option value="3">Pastel Dream</option>
+                <option value="4">Crisp Green and White</option>
+                <option value="5">Sunset Warmth</option>
+                <option value="6">Serene Aqua and Sand</option>
+                <option value="7">Soft Lavender Delight</option>
+                <option value="8">Minimalist Black and White</option>
+                <option value="9">Sunny Yellow</option>
+                <option value="10">Sky Blue</option>
+                <option value="89" selected>Custom</option>
+            </select>
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+</html>

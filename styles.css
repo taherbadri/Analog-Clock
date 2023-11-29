@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --background: #fcf9ec;
+  --text: #444444;
+  --primary: #4caf50;
+  --secondary: #654321;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.watch-container {
+  width: 40%;
+  padding-bottom: 40%;
+  border-radius: 50%;
+  background-color: var(--background);
+  box-shadow: 0.25em -0.5em 1.5em var(--secondary) inset;
+  position: relative;
+}
+
+.anchor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 3%;
+  padding-bottom: 3%;
+  border: none;
+  box-shadow: 0 0 0 10px var(--secondary) inset;
+}
+
+.seconds-hand {
+  height: 0.125em;
+  width: 50%;
+  background-color: var(--secondary);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 25% 50%;
+  transform: translate(-25%, -50%) rotate(-90deg);
+  /* Change to rotate(0deg) */
+}
+
+.minutes-hand {
+  height: 0.125em;
+  width: 55%;
+  background-color: var(--secondary);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 25% 50%;
+  transform: translate(-25%, -50%) rotate(-90deg);
+  /* Change to rotate(0deg) */
+  /* transition: all 5s; */
+}
+
+.hours-hand {
+  height: 0.125em;
+  width: 40%;
+  background-color: var(--secondary);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 25% 50%;
+  transform: translate(-25%, -50%) rotate(-90deg);
+  /* Change to rotate(0deg) */
+  /* transition: all 5s; */
+
+}
+
+.theme {
+  position: absolute;
+  top: 70%;
+  z-index: 2;
+  padding: 0.5em;
+  border-radius: 1em;
+  background-color: var(--background);
+  border: 1px solid var(--secondary);
+  color: var(--text);
+}
+
+.theme:active {
+  border: 1px solid var(--secondary);
+}
+
+
+.number-container {
+  font-family: Al-kanz;
+  width: 100%;
+  border-radius: 50%;
+  height: 100%;
+  z-index: 5;
+  position: absolute;
+}
+
+.number-container>div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
+  position: absolute;
+  font-size: 2vw;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}

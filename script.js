@@ -2,37 +2,33 @@
 // let minuteHand = document.querySelector(".minutes-hand");
 // let hourHand = document.querySelector(".hours-hand");
 
-function updateSecondsHand() {
-	function updateHands() {
-		let hours = new Date().getHours();
-		let minutes = new Date().getMinutes();
-		let seconds = new Date().getSeconds();
+function updateHands() {
+	let hours = new Date().getHours();
+	let minutes = new Date().getMinutes();
+	let seconds = new Date().getSeconds();
 
-		let secondHand = document.querySelector(".seconds-hand");
-		let minuteHand = document.querySelector(".minutes-hand");
-		let hourHand = document.querySelector(".hours-hand");
+	let secondHand = document.querySelector(".seconds-hand");
+	let minuteHand = document.querySelector(".minutes-hand");
+	let hourHand = document.querySelector(".hours-hand");
 
-		// Calculate degrees for each hand
-		let secondDegree = -90 + (360 / 60) * seconds;
-		let minuteDegree = -90 + (360 / 60) * minutes + (6 / 60) * seconds; // Adjust for seconds in minute hand
-		let hourDegree = -90 + (360 / 12) * hours + (30 / 60) * minutes; // Adjust for minutes in hour hand
+	// Calculate degrees for each hand
+	let secondDegree = -90 + (360 / 60) * seconds;
+	let minuteDegree = -90 + (360 / 60) * minutes + (6 / 60) * seconds; // Adjust for seconds in minute hand
+	let hourDegree = -90 + (360 / 12) * hours + (30 / 60) * minutes; // Adjust for minutes in hour hand
 
-		// Apply transforms to hands
-		secondHand.style.transform = `translate(-25%, -50%) rotate(${secondDegree}deg)`;
-		minuteHand.style.transform = `translate(-25%, -50%) rotate(${minuteDegree}deg)`;
-		hourHand.style.transform = `translate(-25%, -50%) rotate(${hourDegree}deg)`;
-	}
-
-	let timing = setInterval(updateHands, 1000);
+	// Apply transforms to hands
+	secondHand.style.transform = `translate(-25%, -50%) rotate(${secondDegree}deg)`;
+	minuteHand.style.transform = `translate(-25%, -50%) rotate(${minuteDegree}deg)`;
+	hourHand.style.transform = `translate(-25%, -50%) rotate(${hourDegree}deg)`;
 }
 
-let timing = setInterval(updateSecondsHand, 1000);
+let timing = setInterval(updateHands, 1000);
 
-const changeTheme = (value) => {
+const select = document.querySelector("select");
+
+const changeTheme = (e) => {
 	let root = document.querySelector(":root");
-	let options = document.querySelector("select").options;
-	console.log(value);
-	switch (value) {
+	switch (e.currentTarget.value) {
 		case "0":
 			root.style.setProperty("--background", "#fcf9ec");
 			root.style.setProperty("--secondary", "#4caf50");
@@ -93,3 +89,4 @@ const changeTheme = (value) => {
 			break;
 	}
 };
+select.addEventListener("change", changeTheme);

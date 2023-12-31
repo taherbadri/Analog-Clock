@@ -28,6 +28,7 @@ const select = document.querySelector("select");
 
 const changeTheme = (e) => {
 	let root = document.querySelector(":root");
+	console.log(e.currentTarget.value);
 	switch (e.currentTarget.value) {
 		case "0":
 			root.style.setProperty("--background", "#fcf9ec");
@@ -89,4 +90,5 @@ const changeTheme = (e) => {
 			break;
 	}
 };
+
 select.addEventListener("change", changeTheme);
